@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Свадьба Иван & Юлия</title>
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 
@@ -17,7 +18,8 @@
         <!-- Главная страница -->
 
         <section class="page" id="home">
-            <h1 id="greeting">Дорогие Ростислав и Елизавета</h1>
+            <h1>Дорогие</h1>
+            <h1 id="greeting"></h1>
             <p class="date">мы приглашаем Вас на нашу свадьбу, которая состоится</p>
             <p class="date"></p>
             <h1>08.08.2025</h1>
@@ -32,13 +34,10 @@
         <section id="schedule" class="page">
             <h2>Тайминг дня</h2>
             <ul class="schedule-list">
-                <li><span class="time">14:00</span> - Сбор гостей</li>
-                <li><span class="time">15:00</span> - Церемония</li>
-                <li><span class="time">16:00</span> - Фотосессия</li>
-                <li><span class="time">17:00</span> - Банкет</li>
-                <li><span class="time">19:00</span> - Первый танец</li>
-                <li><span class="time">21:00</span> - Развлекательная программа</li>
-                <li><span class="time">23:00</span> - Завершение вечера</li>
+                <li id="timingBreakfast" class="timingList"><span class="time">11:00</span>Праздничный завтрак 📍Енотаевская 15</li>
+                <li id="timingZAGS" class="timingList"><span class="time">14:00</span>ЗАГС</li>
+                <li id="timingBanket" class="timingList"><span class="time">16:00</span>Банкет</li>
+
             </ul>
             
             <button id="addToCalendar">Добавить в календарь</button>
@@ -110,5 +109,9 @@
     </div>
 
     <script src="script.js"></script>
+    <audio id="background-music" loop style="display: none;">
+        <source src="music.mp3" type="audio/mpeg">
+            Ваш браузер не поддерживает аудио элемент.
+      </audio>
 </body>
 </html>

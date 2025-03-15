@@ -17,6 +17,10 @@
   
 
 }
+.timingList
+{
+  display: none;
+}
 #placeMap
 {
   margin: 20px;
