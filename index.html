@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Свадьба Иван & Юлия</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <audio id="background-music" loop autoplay>
+        <source src="music.mp3" type="audio/mpeg">
+        Ваш браузер не поддерживает аудио.
+    </audio>
+
+    <div class="container">
+        <!-- Главная страница -->
+
+        <section class="page" id="home">
+            <h1 id="greeting">Дорогие Ростислав и Елизавета</h1>
+            <p class="date">мы приглашаем Вас на нашу свадьбу, которая состоится</p>
+            <p class="date"></p>
+            <h1>08.08.2025</h1>
+
+        </section>
+
+        <section class="page" id="home">
+            <h1>Иван & Юлия</h1>
+            <p class="date">08.08.2025</p>
+        </section>
+    
+        <section id="schedule" class="page">
+            <h2>Тайминг дня</h2>
+            <ul class="schedule-list">
+                <li><span class="time">14:00</span> - Сбор гостей</li>
+                <li><span class="time">15:00</span> - Церемония</li>
+                <li><span class="time">16:00</span> - Фотосессия</li>
+                <li><span class="time">17:00</span> - Банкет</li>
+                <li><span class="time">19:00</span> - Первый танец</li>
+                <li><span class="time">21:00</span> - Развлекательная программа</li>
+                <li><span class="time">23:00</span> - Завершение вечера</li>
+            </ul>
+            
+            <button id="addToCalendar">Добавить в календарь</button>
+        </section>
+        
+        <!-- Детали мероприятия -->
+        <section class="page" id="details">
+            <h2>Место</h2>
+            <div id="placeMap">
+                <div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/org/dvin_hall/152634083234/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Dvin Hall</a><a href="https://yandex.ru/maps/38/volgograd/category/banquet_hall/184108315/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Банкетный зал в Волгограде</a><a href="https://yandex.ru/maps/38/volgograd/category/karaoke/19244809283/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:28px;">Караоке-клуб в Волгограде</a><iframe src="https://yandex.ru/map-widget/v1/?ll=44.478993%2C48.758885&mode=search&oid=152634083234&ol=biz&z=16.77" width="400" height="400" frameborder="5" allowfullscreen="true" style="position:relative;"></iframe></div></div>
+        </section>
+
+
+
+        <!-- История любви -->
+        <section class="page" id="story">
+            <h2>Наша история</h2>
+            <p>Все началось с...</p>
+            <div class="story-slider">
+                <div class="slide">📅 <strong>2019:</strong> Первое свидание</div>
+                <div class="slide">💍 <strong>2024:</strong> Предложение</div>
+                <div class="slide">💒 <strong>2025:</strong> Свадьба!</div>
+            </div>
+        </section>
+
+        <!-- Подтверждение присутствия -->
+        <section class="page" id="rsvp">
+            <h2>Вы с нами? 🥰</h2>
+            <p>Пожалуйста, заполните форму ниже:</p>
+            <div class="form-placeholder">[Тут будет Google Форма]</div>
+        </section>
+
+        <!-- Подарки -->
+        <section class="page" id="gifts">
+            <h2>Что подарить? 🎁</h2>
+            <p>Лучший подарок — ваше присутствие, но если хотите нас порадовать:</p>
+            <ul>
+                <li>🎀 Кофемашина</li>
+                <li>✈️ Путешествие</li>
+                <li>💰 Вклад в семейный бюджет</li>
+            </ul>
+            <p>Можно отправить перевод по <a href="#">QR-коду</a></p>
+        </section>
+
+        <!-- FAQ -->
+        <section class="page" id="faq">
+            <h2>Частые вопросы</h2>
+            <details>
+                <summary>Можно ли прийти с детьми?</summary>
+                <p>Да, мы будем рады маленьким гостям!</p>
+            </details>
+            <details>
+                <summary>Будет ли трансфер?</summary>
+                <p>Да, отправка от вокзала в 15:00.</p>
+            </details>
+        </section>
+
+        <!-- Веселая секция -->
+        <section class="page" id="fun">
+            <h2>Фан-зона 🎉</h2>
+            <p>Пройди тест: "Как хорошо ты знаешь нас?"</p>
+            <button id="quiz-btn">Начать тест</button>
+        </section>
+        <!-- Таймер -->
+        <section class="page" id="countdown">
+            <h2>До свадьбы осталось:</h2>
+            <div id="timer"></div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
