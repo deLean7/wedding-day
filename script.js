@@ -1,12 +1,28 @@
 document.addEventListener("DOMContentLoaded", async function () {
-  document.addEventListener('click', function() {
-    var audio = document.getElementById('background-music');
-    audio.play().then(() => {
-        console.log("Музыка запущена!");
-    }).catch((error) => {
-        console.error("Ошибка при воспроизведении:", error);
-    });
-});
+  const soundIcon = document.getElementById('sound-icon');
+  const backgroundMusic = document.getElementById('background-music');
+  let isMusicPlaying = false;
+  
+  // Обработчик клика по иконке
+  soundIcon.addEventListener('click', function() {
+      if (isMusicPlaying) {
+          // Если музыка играет - выключаем
+          backgroundMusic.pause();
+          soundIcon.src = 'assets/sound-off.svg';
+          isMusicPlaying = false;
+      } else {
+          // Если музыка не играет - включаем
+          backgroundMusic.play()
+              .then(() => {
+                  soundIcon.src = 'assets/sound-on.svg';
+                  isMusicPlaying = true;
+              })
+              .catch(error => {
+                  console.error('Ошибка воспроизведения музыки:', error);
+                  alert('Не удалось воспроизвести музыку. Пожалуйста, разрешите воспроизведение звука на этой странице.');
+              });
+      }
+  });
 
   guestId = window.location.search.replace("?","")
   guestId ? console.log(guestId) : document.body.remove()
@@ -31,10 +47,81 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   updateCountdown();
 
-  // Квиз-фан
-  document.getElementById("quiz-btn").addEventListener("click", function () {
-      alert("Вопрос 1: Где Иван сделал предложение Юлии?");
+
+
+
+    // Инициализация всех слайдеров на странице
+    document.querySelectorAll('.slider-wrapper').forEach((wrapper) => {
+      const container = wrapper.querySelector('.slider-container');
+      const slider = container.querySelector('.slider');
+      const slides = container.querySelectorAll('.slide');
+      const prevBtn = wrapper.querySelector('.prev-arrow');
+      const nextBtn = wrapper.querySelector('.next-arrow');
+      const dotsContainer = wrapper.querySelector('.slider-dots');
+      const colorPalette = wrapper.closest('.examples-container').querySelector('.color-palette');
+      
+      let currentSlide = 0;
+      
+      // Создаем точки навигации
+      slides.forEach((_, index) => {
+          const dot = document.createElement('div');
+          dot.classList.add('slider-dot');
+          if(index === 0) dot.classList.add('active');
+          dot.addEventListener('click', () => goToSlide(index));
+          dotsContainer.appendChild(dot);
+      });
+      
+      const dots = dotsContainer.querySelectorAll('.slider-dot');
+      const colorBoxes = colorPalette.querySelectorAll('.color-box');
+      
+      function updateSlider() {
+          slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+          
+          // Обновляем активные точки
+          dots.forEach((dot, index) => {
+              dot.classList.toggle('active', index === currentSlide);
+          });
+          
+          // Анимация соответствующего цвета
+          animateCurrentColor();
+      }
+      
+      function animateCurrentColor() {
+          // Убираем все анимации
+          colorBoxes.forEach(box => {
+              box.classList.remove('animate');
+          });
+          
+          // Анимируем цвет, соответствующий текущему слайду
+          if (colorBoxes.length > 0) {
+              const colorIndex = currentSlide % colorBoxes.length;
+              colorBoxes[colorIndex].classList.add('animate');
+          }
+      }
+      
+      function goToSlide(index) {
+          currentSlide = index;
+          updateSlider();
+      }
+      
+      function nextSlide() {
+          currentSlide = (currentSlide + 1) % slides.length;
+          updateSlider();
+      }
+      
+      function prevSlide() {
+          currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+          updateSlider();
+      }
+      
+      nextBtn.addEventListener('click', nextSlide);
+      prevBtn.addEventListener('click', prevSlide);
+      
+      // Инициализация
+      updateSlider();
   });
+
+
 });
 
 async function givePersonalSite(guestId)
@@ -46,23 +133,18 @@ async function givePersonalSite(guestId)
 
     case 309209: // Лиза 309209
       textGreeting = "Ростислав и Елизавета"
-      await giveTiming("11:00");
       break;
     case 183463: //Рост 183463
       textGreeting = "Ростислав и Елизавета"
-      await giveTiming("14:00");
       break;
     case 338461: //Валентин 338461
       textGreeting = "Валентин и Аня"
-      await giveTiming("14:00");
       break;
     case 149326: //Анна (Валентин) 149326
       textGreeting = "Валентин и Аня"
-      await giveTiming("14:00");
       break;
     case 355936: // Петя 355936
       textGreeting = "Петр и Мария"
-      await giveTiming("16:00");
       break;
     case 529041: //Маша 529041
       textGreeting = "Петр и Мария"
@@ -162,6 +244,7 @@ async function giveGreeting(greetingText)
   greeting.innerText = greetingText
 
 }
+/*
 async function giveTiming(startTime)
 {
   const timingBreakfast = document.getElementById("timingBreakfast");
@@ -189,7 +272,7 @@ async function giveTiming(startTime)
       break;
   }
 }
-
+*/
 /*
 async function giveGreeting(guestId)
 {

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Свадьба Иван & Юлия</title>
     <link rel="stylesheet" href="style.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -15,92 +15,848 @@
     </audio>
 
     <div class="container">
-        <!-- Главная страница -->
-
-        <section class="page" id="home">
-            <h1>Дорогие</h1>
-            <h1 id="greeting"></h1>
-            <p class="date">мы приглашаем Вас на нашу свадьбу, которая состоится</p>
-            <p class="date"></p>
-            <h1>08.08.2025</h1>
-
-        </section>
+        <!-- Титул -->
 
         <section class="page" id="home">
             <h1>Иван & Юлия</h1>
             <p class="date">08.08.2025</p>
         </section>
-    
+
+         <!-- Музыка -->
+        <section class="page">
+            <h1>Дорогие</h1>
+            <h1 id="greeting"></h1>
+            <p class="simpleText">Перед прочтением просим Вас включить музыку для создания атмосферы</p>            
+            <!-- Добавленные иконки для управления звуком -->
+            <div class="sound-control">
+                <img id="sound-icon" src="assets/sound-off.svg" alt="Sound control">
+            </div>
+            
+            <!-- Аудио элемент (добавьте свой музыкальный файл) -->
+            <audio id="background-music" loop>
+                <source src="music.mp3" type="audio/mpeg">
+                Ваш браузер не поддерживает аудио элемент.
+            </audio>
+        </section>
+
+        <!-- Приглашение -->
+        <section id="schedule" class="page">
+            <p class="simpleText">Наши сердца переполняются радостью, 
+                и нам не терпится разделить с Вами
+                этот особенный день! 
+             </p>
+             <p class="simpleText"> Приглашаем Вас на нашу свадьбу!
+             </p>
+             
+             <p class="date">8 августа 2025 года</p>
+        </section>
+
+
+
+        <!-- Тайминг -->
         <section id="schedule" class="page">
             <h2>Тайминг дня</h2>
-            <ul class="schedule-list">
-                <li id="timingBreakfast" class="timingList"><span class="time">11:00</span>Праздничный завтрак 📍Енотаевская 15</li>
-                <li id="timingZAGS" class="timingList"><span class="time">14:00</span>ЗАГС</li>
-                <li id="timingBanket" class="timingList"><span class="time">16:00</span>Банкет</li>
-
-            </ul>
+            
+            <div class="two-column-schedule">
+                <!-- Левая колонка -->
+                <div class="schedule-column">
+                    <div class="schedule-item">
+                        <span class="date">14:00</span>
+                        <div class="event-info">
+                            <p class="simpleText">Торжественная церемония бракосочетания</p>
+                        </div>
+                    </div>
+                    <div class="location-container">
+                        <span class="location">📍 Центральный ЗАГС</span>
+                    </div>
+                </div>
+                
+                <!-- Правая колонка -->
+                <div class="schedule-column">
+                    <div class="schedule-item">
+                        <span class="date">15:30</span>
+                        <div class="event-info">
+                            <p class="simpleText">Праздничный вечер в ресторане</p>
+                        </div>
+                    </div>
+                    <div class="location-container">
+                        <span class="location">📍 Dvin HALL</span>
+                    </div>
+                </div>
+            </div>
             
             <button id="addToCalendar">Добавить в календарь</button>
         </section>
         
-        <!-- Детали мероприятия -->
+        
+        <!-- Место проведения карта -->
         <section class="page" id="details">
-            <h2>Место</h2>
+            <h2>Место проведения праздничного вечера</h2>
+            <p class="simpleText">Ресторанный комплекс <br> Dvin HALL</p>
+            <p class="simpleText">г. Волгоград <br> Аптечный проезд 9Г</p>
+
             <div id="placeMap">
                 <div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/org/dvin_hall/152634083234/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Dvin Hall</a><a href="https://yandex.ru/maps/38/volgograd/category/banquet_hall/184108315/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Банкетный зал в Волгограде</a><a href="https://yandex.ru/maps/38/volgograd/category/karaoke/19244809283/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:28px;">Караоке-клуб в Волгограде</a><iframe src="https://yandex.ru/map-widget/v1/?ll=44.478993%2C48.758885&mode=search&oid=152634083234&ol=biz&z=16.77" width="400" height="400" frameborder="5" allowfullscreen="true" style="position:relative;"></iframe></div></div>
-        </section>
+        
+                <button id="openNavigation">Открыть в навигаторе</button>
+
+            </section>
 
 
 
-        <!-- История любви -->
-        <section class="page" id="story">
-            <h2>Наша история</h2>
-            <p>Все началось с...</p>
-            <div class="story-slider">
-                <div class="slide">📅 <strong>2019:</strong> Первое свидание</div>
-                <div class="slide">💍 <strong>2024:</strong> Предложение</div>
-                <div class="slide">💒 <strong>2025:</strong> Свадьба!</div>
+        <!-- О нашей свадьбе -->
+        <section class="page">
+            <div id="aboutWedding">
+                <div class="about-content">
+                    <p class="greeting-text">Дорогие наши!</p>
+                    <p class="about-text">
+                        Сердца переполнены радостью, и нам так хочется разделить этот
+                        особенный и трепетный день с вами — с теми, кто делает нашу жизнь
+                        по-настоящему <span class="highlight-text">dolce</span>.
+                    </p>
+                    
+                    <p class="about-text">
+                        Наша свадьба пройдет в духе <span class="highlight-text">La Dolce Vita</span> — «сладкая жизнь».
+                        Это не просто красивые слова, а целая философия, которая так близка
+                        нам.
+                    </p>
+                    
+                    <p class="about-text">
+                        <span class="highlight-text">La Dolce Vita</span> — это наслаждение каждым моментом, вкусом спелых
+                        фруктов, ароматом цитрусовых рощ, смехом и теплом искренних
+                        улыбок. Это умение видеть прекрасное в простых вещах: в золотистом
+                        свете солнца, в неспешных беседах за столом со своими близкими, в
+                        музыке, танцах и, конечно, в любви. Именно так мы хотим прожить
+                        этот день — легко, ярко и беззаботно, как в лучших итальянских
+                        традициях.
+                    </p>
+                    
+                    <div class="decorative-divider">
+                        <span class="divider-icon">🍋</span>
+                    </div>
+                    
+                    <p class="about-text">
+                        И вот наше предложение:<br>
+                        Давайте вместе совершим маленькое путешествие! Закройте глаза на
+                        мгновение… и вот уже не Волгоград за окном, а бескрайние
+                        тосканские просторы. В воздухе витает свежий аромат лимонов и
+                        спелых фруктов, а вокруг — только тепло, уют и радость.
+                    </p>
+                    
+                    <p class="quote-text">
+                        "Вместо городского шума — стрекот цикад и шелест кипарисов.<br>
+                        Вместо обычного вечера — настоящий праздник жизни"
+                    </p>
+                    
+                    <p class="about-text">
+                        Ждем вас в нашем «тосканском» уголке — в уютном ресторане, где
+                        мы постарались воссоздать атмосферу Италии. Будем наслаждаться
+                        изысканными блюдами, смеяться, танцевать и петь до самого утра. <br>
+                        Ведь <span class="highlight-text">La Dolce Vita</span> — это когда рядом те, кто дорог!
+                    </p>
+                    
+                    <div class="ps-note">
+                        <p class="ps-text">
+                            P.S. Готовьтесь к средиземноморскому настроению, легким платьям,
+                            улыбкам и никакой спешки — у нас весь вечер, чтобы наслаждаться
+                            жизнью! Пусть в сердцах будет только радость и предвкушение
+                            праздника. И не забудьте вдохнуть аромат лимонов — они будут
+                            повсюду!
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Подтверждение присутствия -->
-        <section class="page" id="rsvp">
-            <h2>Вы с нами? 🥰</h2>
-            <p>Пожалуйста, заполните форму ниже:</p>
-            <div class="form-placeholder">[Тут будет Google Форма]</div>
+
+        <!-- Дресс код -->
+
+        <!-- Первая страница с основной информацией о дресс-коде -->
+        <section class="page" id="dresscode-part1">
+            <div class="dresscode-container">
+                
+                <div class="dresscode-header">
+                    <p class="dresscode-greeting">Дорогие гости!</p>
+                    <p class="dresscode-intro">
+                        Чтобы наша <span class="dolce-vita">La Dolce Vita</span> заиграла еще ярче, предлагаем вам дополнить этот
+                        солнечный день своими нарядами в духе итальянской легкости и элегантности.
+                    </p>
+                </div>
+                
+                <div class="dresscode-main">
+                    <div class="dresscode-theme">
+                        <h3 class="theme-title">Дресс-код: «Солнечная Тоскана»</h3>
+                        <p class="theme-description">
+                            Выбирайте наряды, в которых вам будет комфортно, свежо и радостно:
+                        </p>
+                    </div>
+                    
+                    <div class="dresscode-grid">
+                        <div class="dresscode-column ladies">
+                            <h4 class="column-title">Для дам:</h4>
+                            <ul class="dresscode-list">
+                                <li>Летящие платья в пастельных, терракотовых, оливковых или лавандовых тонах</li>
+                                <li>Льняные или шифоновые ансамбли</li>
+                                <li>Элегантные комбинации с акцентами под золото или солому</li>
+                                <li>Удобную обувь — ведь нас ждут танцы!</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="dresscode-column gentlemen">
+                            <h4 class="column-title">Для мужчин:</h4>
+                            <ul class="dresscode-list">
+                                <li>Светлые костюмы (бежевый, песочный, серо-голубой)</li>
+                                <li>Рубашки с открытым воротом или легкие льняные брюки</li>
+                                <li>Стильные аксессуары — шейные платки, ремни под цвет кожи</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
         </section>
 
-        <!-- Подарки -->
-        <section class="page" id="gifts">
-            <h2>Что подарить? 🎁</h2>
-            <p>Лучший подарок — ваше присутствие, но если хотите нас порадовать:</p>
-            <ul>
-                <li>🎀 Кофемашина</li>
-                <li>✈️ Путешествие</li>
-                <li>💰 Вклад в семейный бюджет</li>
-            </ul>
-            <p>Можно отправить перевод по <a href="#">QR-коду</a></p>
+        <!-- Вторая страница с дополнительной информацией -->
+        <section class="page" id="dresscode-part2">
+            <div class="dresscode-container">
+                <div class="dresscode-main">
+                    <div class="dresscode-important">
+                        <h4 class="important-title">Важно:</h4>
+                        <p class="important-text">
+                            Не бойтесь играть с фактурами и деталями — чем больше в вашем образе будет
+                            итальянского шика и летнего настроения, тем лучше!
+                        </p>
+                        <p class="important-note">
+                            Будем бесконечно благодарны, если вы оставите черные смокинги, тяжелые
+                            ткани, спортивную одежду, блёстки и неоновые оттенки для других событий.
+                        </p>
+                    </div>
+                    
+                    <div class="dresscode-request">
+                        <p class="request-text">
+                            Как единственное 'белое облачко' в нашем тосканском небе, я позволю себе
+                            скромную просьбу - оставить белый цвет для моего свадебного платья. Зато все
+                            остальные оттенки Италии - лавандовые, персиковые, оливковые - ждут ваших
+                            прекрасных образов!
+                        </p>
+                    </div>
+                    
+                    <div class="dresscode-closing">
+                        <p class="closing-text">
+                            Мы создаем атмосферу легкости, где даже наряд должен «дышать»
+                            средиземноморским бризом.
+                        </p>
+                        <p class="signature">
+                            С нетерпением ждем встречи в этом живописном антураже, а ваши наряды, как
+                            палитра тосканского заката, добавят празднику тепла и радости!
+                        </p>
+                        <p class="couple-names">С большой любовью,<br>Иван и Юлия</p>
+                    </div>
+                    
+                    <div class="dresscode-ps">
+                        <p class="ps-text">
+                            P.S. Если захотите добавить в образ нотку нашего свадебного стиля — смело
+                            используйте лимонные акценты (галстуки, платки, украшения). Пусть этот день
+                            будет сочным и запоминающимся!
+                        </p>
+                        <div class="lemon-decoration">🍋</div>
+                    </div>
+                    
+
+                </div>
+            </div>
+        </section>
+        <!-- 1 Примеры дресскода женщины-->
+        <section class="page" id="dresscode-women-1">
+            <div class="examples-container">
+                
+
+                
+                <div class="color-palette-wrapper">
+                    <div class="color-palette">
+                        <div class="color-box palette-1" style="background-color: #F5E356;"></div>
+                        <div class="color-box palette-1" style="background-color: #D4AF37;"></div>
+                        <div class="color-box palette-1" style="background-color: #E9D5A0;"></div>
+                        <div class="color-box palette-1" style="background-color: #FFF3B5;"></div>
+                        <div class="color-box palette-1" style="background-color: #F5E9A8;"></div>
+                        <div class="color-box palette-1" style="background-color: #E9C46A;"></div>
+                        <div class="color-box palette-1" style="background-color: #E4D5A0;"></div>
+                    </div>
+                </div>
+                
+                <div class="slider-wrapper">
+                    <div class="slider-container">
+                        <div class="slider">
+                            <div class="slide active">
+                                <div class="image-container">
+                                    <img src="assets/women/1/image1.png" alt="Женский образ 1" class="dress-image">
+                                </div>
+                                <div class="slide-caption">Лимонный пай</div>
+                            </div>
+                            <div class="slide">
+                                <div class="image-container">
+                                    <img src="assets/women/1/image2.png" alt="Женский образ 1" class="dress-image">
+                                </div>
+                                <div class="slide-caption">Золото Медичи</div>
+                            </div>
+                            <div class="slide">
+                                <div class="image-container">
+                                    <img src="assets/women/1/image3.png" alt="Женский образ 1" class="dress-image">
+                                </div>
+                                <div class="slide-caption">Солнечная пшеница</div>
+                            </div>
+                            <div class="slide">
+                                <div class="image-container">
+                                    <img src="assets/women/1/image4.png" alt="Женский образ 1" class="dress-image">
+                                </div>
+                                <div class="slide-caption">Лимонный сорбет</div>
+                            </div>
+                            <div class="slide">
+                                <div class="image-container">
+                                    <img src="assets/women/1/image5.png" alt="Женский образ 1" class="dress-image">
+                                </div>
+                                <div class="slide-caption">Солнечная пудра</div>
+                            </div>
+                            <div class="slide">
+                                <div class="image-container">
+                                    <img src="assets/women/1/image6.png" alt="Женский образ 1" class="dress-image">
+                                </div>
+                                <div class="slide-caption">Мед на солнце</div>
+                            </div>
+                            <div class="slide">
+                                <div class="image-container">
+                                    <img src="assets/women/1/image7.png" alt="Женский образ 1" class="dress-image">
+                                </div>
+                                <div class="slide-caption">Золотистая солома</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slider-controls">
+                        <button class="slider-arrow prev-arrow">❮ Назад</button>
+                        <div class="slider-dots"></div>
+                        <button class="slider-arrow next-arrow">Вперёд ❯</button>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        <!-- 2 Примеры дресскода женщины-->
+        <section class="page" id="dresscode-women-2">
+            <div class="examples-container">
+                
+                <div class="color-palette-wrapper">
+                    <div class="color-palette">
+                        <div class="color-box palette-2" style="background-color: #D4A6A6;"></div>
+                        <div class="color-box palette-2" style="background-color: #F8D5D5;"></div>
+                        <div class="color-box palette-2" style="background-color: #E8C4C4;"></div>
+                        <div class="color-box palette-2" style="background-color: #E8B5B5;"></div>
+                        <div class="color-box palette-2" style="background-color: #D8B8B8;"></div>
+
+                    </div>
+                </div>
+                
+                <div class="slider-wrapper">
+                    <div class="slider-container">
+                        <div class="slider">
+                            <div class="slide active">
+                                <div class="image-container">
+                                    <img src="assets/women/2/image1.png" alt="Женский образ 1" class="dress-image">
+                                </div>
+                                <div class="slide-caption">Пыльная роза</div>
+                            </div>
+                            <div class="slide">
+                                <div class="image-container">
+                                    <img src="assets/women/2/image2.png" alt="Женский образ 1" class="dress-image">
+                                </div>
+                                <div class="slide-caption">Розовый макарон</div>
+                            </div>
+                            <div class="slide">
+                                <div class="image-container">
+                                    <img src="assets/women/2/image3.png" alt="Женский образ 1" class="dress-image">
+                                </div>
+                                <div class="slide-caption">Пудра Барджелло</div>
+                            </div>
+                            <div class="slide">
+                                <div class="image-container">
+                                    <img src="assets/women/2/image4.png" alt="Женский образ 1" class="dress-image">
+                                </div>
+                                <div class="slide-caption">Розовый закат</div>
+                            </div>
+                            <div class="slide">
+                                <div class="image-container">
+                                    <img src="assets/women/2/image5.png" alt="Женский образ 1" class="dress-image">
+                                </div>
+                                <div class="slide-caption">Пепел розы</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slider-controls">
+                        <button class="slider-arrow prev-arrow">❮ Назад</button>
+                        <div class="slider-dots"></div>
+                        <button class="slider-arrow next-arrow">Вперёд ❯</button>
+                    </div>
+                </div>
+                
+            </div>
         </section>
 
-        <!-- FAQ -->
-        <section class="page" id="faq">
-            <h2>Частые вопросы</h2>
-            <details>
-                <summary>Можно ли прийти с детьми?</summary>
-                <p>Да, мы будем рады маленьким гостям!</p>
-            </details>
-            <details>
-                <summary>Будет ли трансфер?</summary>
-                <p>Да, отправка от вокзала в 15:00.</p>
-            </details>
+        <!-- 3 Примеры дресскода женщины-->
+        <section class="page" id="dresscode-women-3">
+            <div class="examples-container">
+                
+
+                
+                <div class="color-palette-wrapper">
+                    <div class="color-palette">
+                        <div class="color-box palette-3" style="background-color: #B2A8D1;"></div>
+                        <div class="color-box palette-3" style="background-color: #8A7EBE;"></div>
+                        <div class="color-box palette-3" style="background-color: #C9B1D0;"></div>
+                    </div>
+                </div>
+                
+                <div class="slider-wrapper">
+                    <div class="slider-container">
+                        <div class="slider">
+                            <div class="slide active">
+                                <div class="image-container">
+                                    <img src="assets/women/3/image1.png" alt="Женский образ 1" class="dress-image">
+                                </div>
+                                <div class="slide-caption">Лаванда Валь-д’Орча</div>
+                            </div>
+                            <div class="slide">
+                                <div class="image-container">
+                                    <img src="assets/women/3/image2.png" alt="Женский образ 1" class="dress-image">
+                                </div>
+                                <div class="slide-caption">Фиалковый туман</div>
+                            </div>
+                            <div class="slide">
+                                <div class="image-container">
+                                    <img src="assets/women/3/image3.png" alt="Женский образ 1" class="dress-image">
+                                </div>
+                                <div class="slide-caption">Сиреневый шепот</div>
+                            </div>
+                            
+                    </div>
+                    
+                    <div class="slider-controls">
+                        <button class="slider-arrow prev-arrow">❮ Назад</button>
+                        <div class="slider-dots"></div>
+                        <button class="slider-arrow next-arrow">Вперёд ❯</button>
+                    </div>
+                </div>
+                
+            </div>
         </section>
 
-        <!-- Веселая секция -->
-        <section class="page" id="fun">
-            <h2>Фан-зона 🎉</h2>
-            <p>Пройди тест: "Как хорошо ты знаешь нас?"</p>
-            <button id="quiz-btn">Начать тест</button>
+
+        <!-- 4 Примеры дресскода женщины-->
+        <section class="page" id="dresscode-women-4">
+            <div class="examples-container">
+                
+
+                
+                <div class="color-palette-wrapper">
+                    <div class="color-palette">
+                        <div class="color-box palette-4" style="background-color: #A8D8EA;"></div>
+                        <div class="color-box palette-4" style="background-color: #7AC1C1;"></div>
+                        <div class="color-box palette-4" style="background-color: #C5E0E8;"></div>
+                        <div class="color-box palette-4" style="background-color: #D1E5F0;"></div>
+                        <div class="color-box palette-4" style="background-color: #B3D9E8;"></div>
+                        <div class="color-box palette-4" style="background-color: #B7E3E8;"></div>
+                    </div>
+                </div>
+                
+                <div class="slider-wrapper">
+                    <div class="slider-container">
+                        <div class="slider">
+                            <div class="slide active">
+                                <div class="image-container">
+                                    <img src="assets/women/4/image1.png" alt="Женский образ 1" class="dress-image">
+                                </div>
+                                <div class="slide-caption">Небо Ареццо</div>
+                            </div>
+                            <div class="slide">
+                                <div class="image-container">
+                                    <img src="assets/women/4/image2.png" alt="Женский образ 1" class="dress-image">
+                                </div>
+                                <div class="slide-caption">Лазурь Портофино</div>
+                            </div>
+                            <div class="slide">
+                                <div class="image-container">
+                                    <img src="assets/women/4/image3.png" alt="Женский образ 1" class="dress-image">
+                                </div>
+                                <div class="slide-caption">Аква Бурьяно</div>
+                            </div>
+                            <div class="slide">
+                                <div class="image-container">
+                                    <img src="assets/women/4/image4.png" alt="Женский образ 1" class="dress-image">
+                                </div>
+                                <div class="slide-caption">Дымка Средиземья</div>
+                            </div>
+                            <div class="slide">
+                                <div class="image-container">
+                                    <img src="assets/women/4/image5.png" alt="Женский образ 1" class="dress-image">
+                                </div>
+                                <div class="slide-caption">Ледяное спокойствие</div>
+                            </div>
+                            <div class="slide">
+                                <div class="image-container">
+                                    <img src="assets/women/4/image6.png" alt="Женский образ 1" class="dress-image">
+                                </div>
+                                <div class="slide-caption">Голубой бриз</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slider-controls">
+                        <button class="slider-arrow prev-arrow">❮ Назад</button>
+                        <div class="slider-dots"></div>
+                        <button class="slider-arrow next-arrow">Вперёд ❯</button>
+                    </div>
+                </div>
+                
+            </div>
         </section>
+
+
+
+        <!-- 5 Примеры дресскода женщины-->
+        <section class="page" id="dresscode-women-5">
+            <div class="examples-container">
+
+                
+                <div class="color-palette-wrapper">
+                    <div class="color-palette">
+                        <div class="color-box palette-5" style="background-color: #6B8E4E;"></div>
+                        <div class="color-box palette-5" style="background-color: #8FAF7E;"></div>
+                        <div class="color-box palette-5" style="background-color: #C8E8D5;"></div>
+                        <div class="color-box palette-5" style="background-color: #D5E8C0;"></div>
+                        <div class="color-box palette-5" style="background-color: #4A6B3D;"></div>
+                    </div>
+                </div>
+                
+                <div class="slider-wrapper">
+                    <div class="slider-container">
+                        <div class="slider">
+                            <div class="slide active">
+                                <div class="image-container">
+                                    <img src="assets/women/5/image1.png" alt="Женский образ 1" class="dress-image">
+                                </div>
+                                <div class="slide-caption">Олива Тосканы</div>
+                            </div>
+                            <div class="slide">
+                                <div class="image-container">
+                                    <img src="assets/women/5/image2.png" alt="Женский образ 1" class="dress-image">
+                                </div>
+                                <div class="slide-caption">Шалфейный бриз</div>
+                            </div>
+                            <div class="slide">
+                                <div class="image-container">
+                                    <img src="assets/women/5/image3.png" alt="Женский образ 1" class="dress-image">
+                                </div>
+                                <div class="slide-caption">Мята</div>
+                            </div>
+                            <div class="slide">
+                                <div class="image-container">
+                                    <img src="assets/women/5/image4.png" alt="Женский образ 1" class="dress-image">
+                                </div>
+                                <div class="slide-caption">Фисташковый джелато</div>
+                            </div>
+                            <div class="slide">
+                                <div class="image-container">
+                                    <img src="assets/women/5/image5.png" alt="Женский образ 1" class="dress-image">
+                                </div>
+                                <div class="slide-caption">Мох Сан-Гальяно</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slider-controls">
+                        <button class="slider-arrow prev-arrow">❮ Назад</button>
+                        <div class="slider-dots"></div>
+                        <button class="slider-arrow next-arrow">Вперёд ❯</button>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+
+        <!-- 6 Примеры дресскода женщины-->
+        <section class="page" id="dresscode-women-6">
+            <div class="examples-container">
+
+                
+                <div class="color-palette-wrapper">
+                    <div class="color-palette">
+                        <div class="color-box palette-6" style="background-color: #F9C9A3;"></div>
+                        <div class="color-box palette-6" style="background-color: #FFB347;"></div>
+                        <div class="color-box palette-6" style="background-color: #F0B8A8;"></div>
+                        <div class="color-box palette-6" style="background-color: #F5C9A3;"></div>
+                    </div>
+                </div>
+                
+                <div class="slider-wrapper">
+                    <div class="slider-container">
+                        <div class="slider">
+                            <div class="slide active">
+                                <div class="image-container">
+                                    <img src="assets/women/6/image1.png" alt="Женский образ 1" class="dress-image">
+                                </div>
+                                <div class="slide-caption">Персик Бельведер</div>
+                            </div>
+                            <div class="slide">
+                                <div class="image-container">
+                                    <img src="assets/women/6/image2.png" alt="Женский образ 1" class="dress-image">
+                                </div>
+                                <div class="slide-caption">Абрикосовый мусс</div>
+                            </div>
+                            <div class="slide">
+                                <div class="image-container">
+                                    <img src="assets/women/6/image3.png" alt="Женский образ 1" class="dress-image">
+                                </div>
+                                <div class="slide-caption">Коралловая мечта</div>
+                            </div>
+                            <div class="slide">
+                                <div class="image-container">
+                                    <img src="assets/women/6/image4.png" alt="Женский образ 1" class="dress-image">
+                                </div>
+                                <div class="slide-caption">Закатная пудра</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slider-controls">
+                        <button class="slider-arrow prev-arrow">❮ Назад</button>
+                        <div class="slider-dots"></div>
+                        <button class="slider-arrow next-arrow">Вперёд ❯</button>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        <!-- 7 Примеры дресскода женщины-->
+        <section class="page" id="dresscode-women-7">
+            <div class="examples-container">
+                
+
+                
+                <div class="color-palette-wrapper">
+
+                    <div class="color-palette">
+                        <div class="color-box palette-7" style="background-color: #C7B299;"></div>
+                        <div class="color-box palette-7" style="background-color: #D9C7B8;"></div>
+                        <div class="color-box palette-7" style="background-color: #E4D5C0;"></div>
+                    </div>
+                </div>
+                
+                <div class="slider-wrapper">
+                    <div class="slider-container">
+                        <div class="slider">
+                            <div class="slide active">
+                                <div class="image-container">
+                                    <img src="assets/women/7/image1.png" alt="Женский образ 1" class="dress-image">
+                                </div>
+                                <div class="slide-caption">Старинные мостовые</div>
+                            </div>
+                            <div class="slide">
+                                <div class="image-container">
+                                    <img src="assets/women/7/image2.png" alt="Женский образ 1" class="dress-image">
+                                </div>
+                                <div class="slide-caption">Миндальный десерт</div>
+                            </div>
+                            <div class="slide">
+                                <div class="image-container">
+                                    <img src="assets/women/7/image3.png" alt="Женский образ 1" class="dress-image">
+                                </div>
+                                <div class="slide-caption">Сладкие канноли</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slider-controls">
+                        <button class="slider-arrow prev-arrow">❮ Назад</button>
+                        <div class="slider-dots"></div>
+                        <button class="slider-arrow next-arrow">Вперёд ❯</button>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- 1 Примеры дресскода мужчин-->
+        <section class="page" id="dresscode-women-8">
+            <div class="examples-container">
+                
+
+                
+                <div class="color-palette-wrapper">
+
+                    <div class="color-palette">
+                        <div class="color-box palette-8" style="background-color: #A8D8EA;"></div>
+                        <div class="color-box palette-8" style="background-color: #3A7CA8;"></div>
+                        <div class="color-box palette-8" style="background-color: #6F8FAF;"></div>
+                        <div class="color-box palette-8" style="background-color: #D1E0E8;"></div>
+                    </div>
+                </div>
+                
+                <div class="slider-wrapper">
+                    <div class="slider-container">
+                        <div class="slider">
+                            <div class="slide active">
+                                <div class="image-container">
+                                    <img src="assets/men/1/image1.png" alt="Мужской образ 1" class="dress-image">
+                                </div>
+                                <div class="slide-caption">Утро в Лукке</div>
+                            </div>
+                            <div class="slide">
+                                <div class="image-container">
+                                    <img src="assets/men/1/image2.png" alt="Мужской образ 1" class="dress-image">
+                                </div>
+                                <div class="slide-caption">Волна Портофино</div>
+                            </div>
+                            <div class="slide">
+                                <div class="image-container">
+                                    <img src="assets/men/1/image3.png" alt="Мужской образ 1" class="dress-image">
+                                </div>
+                                <div class="slide-caption">Деним</div>
+                            </div>
+                            <div class="slide">
+                                <div class="image-container">
+                                    <img src="assets/men/1/image4.png" alt="Мужской образ 1" class="dress-image">
+                                </div>
+                                <div class="slide-caption">Утро в Пьенце</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slider-controls">
+                        <button class="slider-arrow prev-arrow">❮ Назад</button>
+                        <div class="slider-dots"></div>
+                        <button class="slider-arrow next-arrow">Вперёд ❯</button>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+       <!-- 2 Примеры дресскода мужчин-->
+       <section class="page" id="dresscode-women-9">
+        <div class="examples-container">
+            
+
+            
+            <div class="color-palette-wrapper">
+
+                <div class="color-palette">
+                    <div class="color-box palette-9" style="background-color: #2E5A4D;"></div>
+                    <div class="color-box palette-9" style="background-color: #4A6B3D;"></div>
+                    <div class="color-box palette-9" style="background-color: #5F6D5E;"></div>
+                    <div class="color-box palette-9" style="background-color: #F9E076;"></div>
+
+                </div>
+            </div>
+            
+            <div class="slider-wrapper">
+                <div class="slider-container">
+                    <div class="slider">
+                        <div class="slide active">
+                            <div class="image-container">
+                                <img src="assets/men/2/image1.png" alt="Мужской образ 1" class="dress-image">
+                            </div>
+                            <div class="slide-caption">Кипарисовая аллея</div>
+                        </div>
+                        <div class="slide">
+                            <div class="image-container">
+                                <img src="assets/men/2/image2.png" alt="Мужской образ 1" class="dress-image">
+                            </div>
+                            <div class="slide-caption">Травяной вельвет</div>
+                        </div>
+                        <div class="slide">
+                            <div class="image-container">
+                                <img src="assets/men/2/image3.png" alt="Мужской образ 1" class="dress-image">
+                            </div>
+                            <div class="slide-caption">Пепел Виньяй</div>
+                        </div>
+                        <div class="slide">
+                            <div class="image-container">
+                                <img src="assets/men/2/image4.png" alt="Мужской образ 1" class="dress-image">
+                            </div>
+                            <div class="slide-caption">Лимончелло</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slider-controls">
+                    <button class="slider-arrow prev-arrow">❮ Назад</button>
+                    <div class="slider-dots"></div>
+                    <button class="slider-arrow next-arrow">Вперёд ❯</button>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+       <!-- 3 Примеры дресскода мужчин-->
+       <section class="page" id="dresscode-women-10">
+        <div class="examples-container">
+            
+
+            
+            <div class="color-palette-wrapper">
+
+                <div class="color-palette">
+                    <div class="color-box palette-10" style="background-color: #5F4B3B;"></div>
+                    <div class="color-box palette-10" style="background-color: #E2D0B7;"></div>
+                    <div class="color-box palette-10" style="background-color: #C7B299;"></div>
+                    <div class="color-box palette-10" style="background-color: #808080;"></div>
+
+
+                </div>
+            </div>
+            
+            <div class="slider-wrapper">
+                <div class="slider-container">
+                    <div class="slider">
+                        <div class="slide active">
+                            <div class="image-container">
+                                <img src="assets/men/3/image1.png" alt="Мужской образ 1" class="dress-image">
+                            </div>
+                            <div class="slide-caption">Эспрессо</div>
+                        </div>
+                        <div class="slide">
+                            <div class="image-container">
+                                <img src="assets/men/3/image2.png" alt="Мужской образ 1" class="dress-image">
+                            </div>
+                            <div class="slide-caption">Песок Виареджо</div>
+                        </div>
+                        <div class="slide">
+                            <div class="image-container">
+                                <img src="assets/men/3/image3.png" alt="Мужской образ 1" class="dress-image">
+                            </div>
+                            <div class="slide-caption">Камень Сиены</div>
+                        </div>
+                        <div class="slide">
+                            <div class="image-container">
+                                <img src="assets/men/3/image4.png" alt="Мужской образ 1" class="dress-image">
+                            </div>
+                            <div class="slide-caption">Дым от сигары</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slider-controls">
+                    <button class="slider-arrow prev-arrow">❮ Назад</button>
+                    <div class="slider-dots"></div>
+                    <button class="slider-arrow next-arrow">Вперёд ❯</button>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
         <!-- Таймер -->
         <section class="page" id="countdown">
             <h2>До свадьбы осталось:</h2>
