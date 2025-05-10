@@ -46,8 +46,19 @@ document.addEventListener("DOMContentLoaded", async function () {
   }
 
   updateCountdown();
-
-
+  
+// Блокировка горизонтального скролла
+    document.body.addEventListener('touchmove', function(e) {
+        if (e.touches.length > 1) e.preventDefault();
+    }, { passive: false });
+    
+    // Фиксация ширины
+    function fixViewport() {
+        document.documentElement.style.overflowX = 'hidden';
+        document.body.style.overflowX = 'hidden';
+    }
+    fixViewport();
+    window.addEventListener('resize', fixViewport);
 
 
     // Инициализация всех слайдеров на странице
