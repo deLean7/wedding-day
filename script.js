@@ -26,9 +26,8 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   guestId = window.location.search.replace("?","")
   guestId ? console.log(guestId) : document.body.remove()
-  let textGreting = await givePersonalSite(parseInt(guestId))
-  const greeting = document.getElementById("greeting")
-  greeting.innerHTML = textGreting;
+  await givePersonalSite(parseInt(guestId))
+
   // Таймер обратного отсчета
   function updateCountdown() {
       const weddingDate = new Date("2025-08-08T14:00:00").getTime();
@@ -62,199 +61,280 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 
     // Инициализация всех слайдеров на странице
-    document.querySelectorAll('.slider-wrapper').forEach((wrapper) => {
-      const container = wrapper.querySelector('.slider-container');
-      const slider = container.querySelector('.slider');
-      const slides = container.querySelectorAll('.slide');
-      const prevBtn = wrapper.querySelector('.prev-arrow');
-      const nextBtn = wrapper.querySelector('.next-arrow');
-      const dotsContainer = wrapper.querySelector('.slider-dots');
-      const colorPalette = wrapper.closest('.examples-container').querySelector('.color-palette');
-      
-      let currentSlide = 0;
-      
-      // Создаем точки навигации
-      slides.forEach((_, index) => {
-          const dot = document.createElement('div');
-          dot.classList.add('slider-dot');
-          if(index === 0) dot.classList.add('active');
-          dot.addEventListener('click', () => goToSlide(index));
-          dotsContainer.appendChild(dot);
-      });
-      
-      const dots = dotsContainer.querySelectorAll('.slider-dot');
-      const colorBoxes = colorPalette.querySelectorAll('.color-box');
-      
-      function updateSlider() {
-          slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-          
-          // Обновляем активные точки
-          dots.forEach((dot, index) => {
-              dot.classList.toggle('active', index === currentSlide);
-          });
-          
-          // Анимация соответствующего цвета
-          animateCurrentColor();
-      }
-      
-      function animateCurrentColor() {
-          // Убираем все анимации
-          colorBoxes.forEach(box => {
-              box.classList.remove('animate');
-          });
-          
-          // Анимируем цвет, соответствующий текущему слайду
-          if (colorBoxes.length > 0) {
-              const colorIndex = currentSlide % colorBoxes.length;
-              colorBoxes[colorIndex].classList.add('animate');
-          }
-      }
-      
-      function goToSlide(index) {
-          currentSlide = index;
-          updateSlider();
-      }
-      
-      function nextSlide() {
-          currentSlide = (currentSlide + 1) % slides.length;
-          updateSlider();
-      }
-      
-      function prevSlide() {
-          currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-          updateSlider();
-      }
-      
-      nextBtn.addEventListener('click', nextSlide);
-      prevBtn.addEventListener('click', prevSlide);
-      
-      // Инициализация
-      updateSlider();
-  });
+document.querySelectorAll('.slider-wrapper').forEach((wrapper) => {
+    const container = wrapper.querySelector('.slider-container');
+    const slider = container.querySelector('.slider');
+    const slides = container.querySelectorAll('.slide');
+    const prevBtn = wrapper.querySelector('.prev-arrow');
+    const nextBtn = wrapper.querySelector('.next-arrow');
+    const dotsContainer = wrapper.querySelector('.slider-dots');
+    const colorPalette = wrapper.closest('.examples-container').querySelector('.color-palette');
+    
+    let currentSlide = 0;
+    
+    // Создаем точки навигации
+    slides.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('slider-dot');
+        if(index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+    });
+    
+    const dots = dotsContainer.querySelectorAll('.slider-dot');
+    const colorBoxes = colorPalette.querySelectorAll('.color-box');
+    
+    function updateSlider() {
+        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        
+        // Обновляем активные точки
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentSlide);
+        });
+        
+        // Анимация и применение цвета
+        animateCurrentColor();
+        applyColorFromPalette();
+    }
+    
+    function animateCurrentColor() {
+        // Убираем все анимации
+        colorBoxes.forEach(box => {
+            box.classList.remove('animate');
+        });
+        
+        // Анимируем цвет, соответствующий текущему слайду
+        if (colorBoxes.length > 0) {
+            const colorIndex = currentSlide % colorBoxes.length;
+            colorBoxes[colorIndex].classList.add('animate');
+        }
+    }
+    
+    function applyColorFromPalette() {
+        if (colorBoxes.length > 0) {
+            const colorIndex = currentSlide % colorBoxes.length;
+            const activeColorBox = colorBoxes[colorIndex];
+            
+            // Получаем цвет из data-атрибута или background-color
+            const color = activeColorBox.dataset.color || getComputedStyle(activeColorBox).backgroundColor;
+            
+            // Применяем цвет к текущему слайду
+            slides[currentSlide].style.backgroundColor = color;
+            
+            // Сохраняем цвет в data-атрибут слайда
+            slides[currentSlide].dataset.background = color;
+        }
+    }
+    
+    function goToSlide(index) {
+        currentSlide = index;
+        updateSlider();
+    }
+    
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateSlider();
+    }
+    
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        updateSlider();
+    }
+    
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+    
+    // Инициализация
+    updateSlider();
+});
 
 
 });
-
+async function givePersonalDear(params) {
+  
+}
 async function givePersonalSite(guestId)
 {
   let textGreeting = ""
+  let typeGuest = 0
   switch (guestId) {
 
 
 
     case 309209: // Лиза 309209
       textGreeting = "Ростислав и Елизавета"
+      typeGuest = 3
       break;
     case 183463: //Рост 183463
       textGreeting = "Ростислав и Елизавета"
+      typeGuest = 3
       break;
     case 338461: //Валентин 338461
       textGreeting = "Валентин и Аня"
+      typeGuest = 3
       break;
     case 149326: //Анна (Валентин) 149326
       textGreeting = "Валентин и Аня"
+      typeGuest = 3
       break;
     case 355936: // Петя 355936
       textGreeting = "Петр и Мария"
+      typeGuest = 3
       break;
     case 529041: //Маша 529041
       textGreeting = "Петр и Мария"
+      typeGuest = 3
       break;
     case 574843: //Соня 574843
       textGreeting = "Софа"
+      typeGuest = 2
       break;
     case 365822: //Полина 365822
       textGreeting = "Полина"
+      typeGuest = 2
       break;
     case 996065: //Кристина 996065
       textGreeting = "Кристина"
+      typeGuest = 2
 
       break;
       case 788478: //Наташа  788478
       textGreeting = "Наташа"
+      typeGuest = 2
 
       break;
       case 394812: //Никита 394812
       textGreeting = "Никита и Кристина"
+      typeGuest = 3
 
       break;
       case 963474: //Кристина 963474
       textGreeting = "Никита и Кристина"
+      typeGuest = 3
 
       break;
       case 534764: // Папа Мама 534764
       textGreeting = "Папа и Мама"
+      typeGuest = 3
 
       break;
       case 730295: //Миша Марина + дети 730295
       textGreeting = "Миша, Марина, Аленочка, Ванечка и Машенька"
+      typeGuest = 3
 
       break;
       case 315552: //Бабушка Дедушка 315552
       textGreeting = "Бабушка и Дедушка"
+      typeGuest = 3
 
       break;
       case 199844: //Женя Нина Максим Кривцовы 199844
       textGreeting = "Евгений, Нина и Максим"
+      typeGuest = 3
+      break
 
+      case 523226:
+      textGreeting = "Евгений и Стефания"
+      typeGuest = 3
       break;
+
+      case 395166:
+      textGreeting = "Ниночка"
+      typeGuest = 2
+      break;  
+
       case 905420: //Теть Лена и Араз 905420
       textGreeting = "Елена и Араз"
+      typeGuest = 3
 
       break;
       case 586169: //Маша Витя Ваня Вологины 586169
       textGreeting = "Виктор, Мария и Ванечка"
+      typeGuest = 3
 
       break;
       case 265939: //Кира Вологина 265939
       textGreeting = "Кируся"
+      typeGuest = 2
 
       break;
       case 204194: //Тамара Вологина 204194
       textGreeting = "Бабушка Тома" // think
+      typeGuest = 2
 
       break;
       case 873819: //Олег Вологин 873819
-      textGreeting = "Олег"
+      textGreeting = "Олег и Софья"
+      typeGuest = 3
 
       break;
       case 612764: //Дима Царев 612764
       textGreeting = "Дмитрий"
+      typeGuest = 1
 
       break;
       case 301298: //Маргарита Царева 301298
-      textGreeting = "Бабушка Рита" //think
-
+      textGreeting = "Маргарита Александровна" //think
+      typeGuest = 2
       break;
       case 512744: //Мама и Паша 512744
       textGreeting = "Мама и Паша" //think
-
+      typeGuest = 3
       break;
       case 319135: //Лена 319135
       textGreeting = "Лена" //think
-
+      typeGuest = 2
       break;
       case 436275: //Саша Вика Максим Федяевы 436275
-      textGreeting = "Бабушка Рита" //think
-
+      textGreeting = "Саша, Вика и Максим" //think
+      typeGuest = 3
       break;
       case 428068: //Алина Максим Меренич 428068
-      textGreeting = "Алина и Максим" //think
-
+      textGreeting = "Алина, Саша и Максим" //think
+      typeGuest = 3
       default:
         document.body.remove
         return
 
   }
-  return textGreeting
-
+  //return textGreeting
+  giveGreeting(textGreeting, typeGuest)
 }
-async function giveGreeting(greetingText)
+/*
+typeGuest:
+1- ОН 1
+2- ОНА 1
+3- Их 2 и более
+*/
+async function giveGreeting(textGreeting, typeGuest)
 {
-  const greeting = document.getElementById("greeting")
-  greeting.innerText = greetingText
+  const greeting = document.getElementById("greeting");
+  const dear = document.getElementById("dear");
+  const dearOur = document.getElementById("dearOur");
+  if(typeGuest == 1)
+  {
+    dear.innerHTML = "Дорогой";
+    dearOur.innerHTML = "Дорогой "+textGreeting
+    greeting.innerText = textGreeting;
+
+  }
+  else  if(typeGuest == 2)
+  {
+    dear.innerHTML = "Дорогая";
+    dearOur.innerHTML = "Дорогая " + textGreeting
+    greeting.innerText = textGreeting;
+
+  }
+  else  if(typeGuest == 3)
+  {
+    dear.innerHTML = "Дорогие";
+    dearOur.innerHTML = "Дорогие наши";
+    greeting.innerText = textGreeting;
+
+  }
 
 }
+
 /*
 async function giveTiming(startTime)
 {

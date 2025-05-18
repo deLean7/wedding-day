@@ -3,9 +3,10 @@
 :root {
   --color-text: #776e48;
   --color-back: #FCF2D8;
-  --color-content: #F5EACF ;
-  --color-border: #C7C46C;
+  --color-content: #fffbc8 ;
+  --color-border: #e8c83e;
   --color-limon: #F6D945 ;
+  --color-contentGreen: #cccf5340;
 }
 * {
     margin: 0;
@@ -26,7 +27,7 @@
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  height: 100dvh;
   width: 100%;
 
   padding-left: 0px;
@@ -42,7 +43,7 @@
 }
 #titlePhoto {
     width: 100%;
-    height: 100vh; /* На всю высоту экрана */
+    height: 100dvh; /* На всю высоту экрана */
 }
 #titlePhoto img {
     width: 100%;
@@ -94,35 +95,152 @@ h1 {
 }
 #dearPage{
    position: relative;
-    min-height: 100vh; /* занимает всю высоту экрана */
+    min-height: 100dvh; /* занимает всю высоту экрана */
     background-image: url('assets/background/limonsleafsnoback.png');
     background-size: 100% 100%;   /* растянуть по ширине */
     background-position: center;  /* центрировать */
     background-repeat: no-repeat; /* не повторять */
+        background-size: cover;
+
 }
 #invite{
     position: relative;
-    min-height: 100vh; /* занимает всю высоту экрана */
+    min-height: 100dvh; /* занимает всю высоту экрана */
     background-image: url('assets/background/noback5.png');
     background-size: 100% 100%;   /* растянуть по ширине */
     background-position: center;  /* центрировать */
     background-repeat: no-repeat; /* не повторять */
+        background-size: cover;
+
 }
 #details{
     position: relative;
-    min-height: 100vh; /* занимает всю высоту экрана */
+    min-height: 100dvh; /* занимает всю высоту экрана */
     background-image: url('assets/background/noback6.png');
     background-size: 100% 100%;   /* растянуть по ширине */
     background-position: center;  /* центрировать */
     background-repeat: no-repeat; /* не повторять */
+    background-size: cover;
+
 }
 #countdown{
     position: relative;
-    min-height: 100vh; /* занимает всю высоту экрана */
+    min-height: 100dvh; /* занимает всю высоту экрана */
     background-image: url('assets/background/timingNoBack.png');
     background-size: 100% 100%;   /* растянуть по ширине */
     background-position: center;  /* центрировать */
     background-repeat: no-repeat; /* не повторять */
+    background-size: cover;
+}
+#aboutWeddingPage{
+    position: relative;
+    min-height: 100dvh; /* занимает всю высоту экрана */
+    background-image: url('assets/background/noback7.png');
+    background-size: 100% 100%;   /* растянуть по ширине */
+    background-position: center;  /* центрировать */
+    background-repeat: no-repeat; /* не повторять */
+        background-size: cover;
+
+}
+#dresscode-women-1{
+    position: relative;
+    min-height: 100dvh; /* занимает всю высоту экрана */
+    background-image: url('assets/background/dressback1.png');
+    background-size: 100% 100%;   /* растянуть по ширине */
+    background-position: center;  /* центрировать */
+    background-repeat: no-repeat; /* не повторять */
+    background-size: cover;
+
+}
+#dresscode-women-2{
+      position: relative;
+    min-height: 100dvh; /* занимает всю высоту экрана */
+    background-image: url('assets/background/dressback2.png');
+    background-size: 100% 100%;   /* растянуть по ширине */
+    background-position: center;  /* центрировать */
+    background-repeat: no-repeat; /* не повторять */
+    background-size: cover;
+}
+#dresscode-women-3{
+      position: relative;
+    min-height: 100dvh; /* занимает всю высоту экрана */
+    background-image: url('assets/background/dressback3.png');
+    background-size: 100% 100%;   /* растянуть по ширине */
+    background-position: center;  /* центрировать */
+    background-repeat: no-repeat; /* не повторять */
+    background-size: cover;
+}
+#dresscode-women-4{
+      position: relative;
+    min-height: 100dvh; /* занимает всю высоту экрана */
+    background-image: url('assets/background/dressback4.png');
+    background-size: 100% 100%;   /* растянуть по ширине */
+    background-position: center;  /* центрировать */
+    background-repeat: no-repeat; /* не повторять */
+    background-size: cover;
+}
+#dresscode-women-5{
+      position: relative;
+    min-height: 100dvh; /* занимает всю высоту экрана */
+    background-image: url('assets/background/dressback5.png');
+    background-size: 100% 100%;   /* растянуть по ширине */
+    background-position: center;  /* центрировать */
+    background-repeat: no-repeat; /* не повторять */
+    background-size: cover;
+}
+#dresscode-women-6{
+      position: relative;
+    min-height: 100dvh; /* занимает всю высоту экрана */
+    background-image: url('assets/background/dressback3.png');
+    background-size: 100% 100%;   /* растянуть по ширине */
+    background-position: center;  /* центрировать */
+    background-repeat: no-repeat; /* не повторять */
+    background-size: cover;
+}
+#dresscode-women-7{
+      position: relative;
+    min-height: 100dvh; /* занимает всю высоту экрана */
+    background-image: url('assets/background/dressback2.png');
+    background-size: 100% 100%;   /* растянуть по ширине */
+    background-position: center;  /* центрировать */
+    background-repeat: no-repeat; /* не повторять */
+    background-size: cover;
+}
+#dresscode-women-8{
+      position: relative;
+    min-height: 100dvh; /* занимает всю высоту экрана */
+    background-image: url('assets/background/dressback1.png');
+    background-size: 100% 100%;   /* растянуть по ширине */
+    background-position: center;  /* центрировать */
+    background-repeat: no-repeat; /* не повторять */
+    background-size: cover;
+}
+#dresscode-women-9{
+      position: relative;
+    min-height: 100dvh; /* занимает всю высоту экрана */
+    background-image: url('assets/background/dressback4.png');
+    background-size: 100% 100%;   /* растянуть по ширине */
+    background-position: center;  /* центрировать */
+    background-repeat: no-repeat; /* не повторять */
+    background-size: cover;
+}
+#dresscode-women-10{
+      position: relative;
+    min-height: 100dvh; /* занимает всю высоту экрана */
+    background-image: url('assets/background/dressback5.png');
+    background-size: 100% 100%;   /* растянуть по ширине */
+    background-position: center;  /* центрировать */
+    background-repeat: no-repeat; /* не повторять */
+    background-size: cover;
+}
+#anketa{
+    position: relative;
+    min-height: 100dvh; /* занимает всю высоту экрана */
+    background-image: url('assets/background/noback6.png');
+    background-size: 100% 100%;   /* растянуть по ширине */
+    background-position: center;  /* центрировать */
+    background-repeat: no-repeat; /* не повторять */
+    background-size: cover;
 }
 h2 {
   font-family: 'Great Vibes', cursive;
@@ -142,14 +260,14 @@ h2 {
     height: 100vh;
     */
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
 }
 
 .page  {
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -204,6 +322,7 @@ h2 {
     padding: 10px;
     border-radius: 10px;
     min-width: 100%;
+    border: 0.1px solid #d5d3d3;
 }
 
 #schedule {
@@ -304,8 +423,10 @@ h2 {
 .date {
   font-weight: bold;
   display: block;
+  font-family: 'Great Vibes';
   margin-bottom: 5px;
   font-size: 2.5em;
+  color: #999541;
 }
 
 
@@ -325,7 +446,7 @@ h2 {
 #openNavigation {
   font-size: 1.2em;
   padding: 12px 20px;
-  background: #b76e79;
+  background: #e8c83e;
   color: white;
   border: none;
   border-radius: 8px;
@@ -338,24 +459,16 @@ h2 {
   background: #a15b66;
 }
 
-@media (max-width: 700px) {
-  .two-column-schedule {
-      flex-direction: column;
-      gap: 30px;
-  }
-  
-  .location {
-      font-size: 1.2em;
-  }
-}
+
 
 /*О нас*/
 .greeting-text {
-  font-size: 1.8rem;
+  font-size: 2.6rem;
   text-align: center;
   margin-bottom: 30px;
   color: var(--color-text);
-  font-style: italic;
+  font-family: 'Great Vibes';
+
 }
 
 .about-content {
@@ -368,12 +481,17 @@ h2 {
 .about-text {
   margin-bottom: 25px;
   font-size: 1.1rem;
-  text-align: justify;
+  text-align: left;
 }
+#ourSuggest
+{
+    font-size: 1.3rem;
+    color: var(--color-border);
 
+}
 .highlight-text {
   color: var(--color-border);
-  font-weight: 500;
+  font-weight: 1000;
   font-style: italic;
 }
 
@@ -439,23 +557,7 @@ h2 {
   color: #666;
 }
 
-@media (max-width: 768px) {
-  .page {
-      padding: 20px 15px;
-  }
-  
-  h2 {
-      font-size: 2rem;
-  }
-  
-  .about-content {
-      padding: 25px;
-  }
-  
-  .about-text {
-      font-size: 1rem;
-  }
-}
+
 
 /*Дресс код*/
 #dresscode {
@@ -465,8 +567,7 @@ h2 {
 
 .dresscode-container {
   max-width: 900px;
-  margin: 0 auto;
-  padding: 0 20px;
+
 }
 
 .dresscode-title {
@@ -545,7 +646,7 @@ h2 {
 }
 
 .gentlemen {
-  background-color: #f5f3f9;
+  background-color: #f0fbff;
   border: 1px solid #e0d8eb;
 }
 
@@ -581,11 +682,11 @@ h2 {
 }
 
 .dresscode-important {
-  background-color: #fff5f0;
+  background-color: var(--color-contentGreen);
   padding: 25px;
   border-radius: 10px;
   margin: 40px 0;
-  border-left: 4px solid #e6a4b1;
+  border-left: 4px solid var(--color-border);
 }
 
 .important-title {
@@ -611,8 +712,9 @@ h2 {
   margin: 40px 0;
   position: relative;
   overflow: hidden;
+  border-left: 4px solid var(--color-border);
 }
-
+/*
 .dresscode-request:before {
   content: "";
   position: absolute;
@@ -622,7 +724,7 @@ h2 {
   height: 100%;
   background: linear-gradient(to bottom, #e6a4b1, #b76e79);
 }
-
+*/
 .request-text {
   color: #555;
   line-height: 1.7;
@@ -648,7 +750,8 @@ h2 {
 }
 
 .couple-names {
-  font-size: 1.3rem;
+  font-family: 'Great Vibes';
+  font-size: 2.3rem;
   color: var(--color-text);
   margin-top: 30px;
   font-style: italic;
@@ -675,20 +778,7 @@ h2 {
   opacity: 0.3;
 }
 
-@media (max-width: 768px) {
-  .dresscode-grid {
-      flex-direction: column;
-      gap: 30px;
-  }
-  
-  .dresscode-title {
-      font-size: 2.2rem;
-  }
-  
-  .dresscode-main {
-      padding: 25px;
-  }
-}
+
 
 
 /* Примеры дресскода */
@@ -791,7 +881,7 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--color-content);
+  background: var(--color-back);
 }
 
 .dress-image {
@@ -885,6 +975,7 @@ h2 {
   }
 }
 
+
 @media (max-width: 480px) {
   .image-container {
       height: 300px;
@@ -897,6 +988,89 @@ h2 {
   .color-box {
       width: 30px;
       height: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .dresscode-grid {
+      flex-direction: column;
+      gap: 30px;
+  }
+  
+  .dresscode-title {
+      font-size: 2.2rem;
+  }
+  
+  .dresscode-main {
+      padding: 25px;
+  }
+}
+@media (max-width: 768px) {
+  .page {
+      padding: 20px 15px;
+  }
+  
+  h2 {
+      font-size: 2rem;
+  }
+  
+  .about-content {
+      padding: 25px;
+  }
+  
+  .about-text {
+      font-size: 1rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .two-column-schedule {
+      flex-direction: column;
+      gap: 30px;
+  }
+  
+  .location {
+      font-size: 1.2em;
+  }
+}
+
+@media (max-width: 430px) {
+  #dear{
+    font-size: 4em;
+  }
+  h1{
+    font-size: 3em;
+  }
+  .simpleText{
+    font-size: 1.2em;
+    margin: 5px;
+  }
+  .date{
+    font-size: 2.5em;
+  }
+}
+@media (max-width: 320px) {
+  #dear{
+    font-size: 4em;
+  }
+  h1{
+    font-size: 2em;
+  }
+  .simpleText{
+    font-size: 1.2em;
+    margin: 5px;
+  }
+  .date{
+    font-size: 2.5em;
+  }
+
+  #openNavigation{
+    font-size: 0.8em;
+  }
+  .whiteBack{
+    padding: 5px;
+  }
+  .two-column-schedule{
+    margin: 0;
   }
 }
 

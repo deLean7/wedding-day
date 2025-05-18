@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <audio id="background-music" loop autoplay>
+    <audio id="background-music" loop>
         <source src="ti_amore.mp3" type="audio/mpeg">
         Ваш браузер не поддерживает аудио.
     </audio>
@@ -102,12 +102,12 @@
             
             <h1>Место проведения праздничного вечера</h1>
             <div class="whiteBack">
-            <p class="simpleText">Ресторанный комплекс <br> Dvin HALL</p>
+            <p class="simpleText">Ресторанный комплекс <br> <span class="highlight-text">Dvin HALL</span></p>
             <p class="simpleText">г. Волгоград <br> Аптечный проезд 9Г</p>
 
         <div id="placeMap" class="map-container">
             <div style="position:relative;overflow:hidden;">
-                <a href="https://yandex.ru/maps/?um=constructor%3A2a34e15a28cb6be14bab9d5a6f00fdc61c8c3735d2a7fe57b3e6e4f336b89d2e&amp;source=constructorStatic" target="_blank"><img src="https://api-maps.yandex.ru/services/constructor/1.0/static/?um=constructor%3A2a34e15a28cb6be14bab9d5a6f00fdc61c8c3735d2a7fe57b3e6e4f336b89d2e&amp;width=300&amp;height=300&amp;lang=ru_RU" alt="" style="border: 0;" /></a>        
+                <a href="https://yandex.ru/maps/?um=constructor%3A2a34e15a28cb6be14bab9d5a6f00fdc61c8c3735d2a7fe57b3e6e4f336b89d2e&amp;source=constructorStatic" target="_blank"><img src="https://api-maps.yandex.ru/services/constructor/1.0/static/?um=constructor%3A2a34e15a28cb6be14bab9d5a6f00fdc61c8c3735d2a7fe57b3e6e4f336b89d2e&amp;width=200&amp;height=200&amp;lang=ru_RU" alt="" style="border: 0;" /></a>        
                 <button id="openNavigation" onclick="window.open('https://yandex.ru/maps/-/CHvO6Dlx', '_blank')">Открыть в навигаторе</button>
 
         </div>
@@ -116,11 +116,11 @@
 
 
         <!-- О нашей свадьбе -->
-        <section class="page">
+        <section class="page" id="aboutWeddingPage">
         <div id="scrollContent">
             <div id="aboutWedding">
                 <div class="whiteBack">
-                    <p class="greeting-text">Дорогие наши!</p>
+                    <p class="greeting-text" id="dearOur">Дорогие наши!</p>
                     <p class="about-text">
                         Сердца переполнены радостью, и нам так хочется разделить этот
                         особенный и трепетный день с вами — с теми, кто делает нашу жизнь
@@ -146,13 +146,9 @@
                     <div class="decorative-divider">
                         <span class="divider-icon">🍋</span>
                     </div>
-                </div>     
-            </div>
-            
-            <div id="aboutWedding">
-                <div class="whiteBack">   
+
                     <p class="about-text">
-                        И вот наше предложение:<br>
+                        <span id="ourSuggest">И вот наше предложение:</span><br>
                         Давайте вместе совершим маленькое путешествие! Закройте глаза на
                         мгновение… и вот уже не Волгоград за окном, а бескрайние
                         тосканские просторы. В воздухе витает свежий аромат лимонов и
@@ -187,17 +183,7 @@
         <!-- Дресс код -->
 
         <!-- Первая страница с основной информацией о дресс-коде -->
-            <div class="dresscode-container">
-                
-                <div class="dresscode-header">
-                   <!-- <p class="dresscode-greeting">Дорогие гости!</p> -->
-                    <!-- <p class="dresscode-intro">
-                        Чтобы наша <span class="dolce-vita">La Dolce Vita</span> заиграла еще ярче, предлагаем вам дополнить этот
-                        солнечный день своими нарядами в духе итальянской легкости и элегантности.
-                    </p>
-                    -->
-                </div>
-                
+            <div class="dresscode-container">       
                 <div class="whiteBack">
                     <div class="dresscode-theme">
                         <h1 class="theme-title">Дресс-код: «Солнечная Тоскана»</h3>
@@ -231,14 +217,15 @@
                         <p class="ps-note">
                             Выбирайте наряды, в которых вам будет комфортно, свежо и радостно!
                         </p>
-                </div>
-            </div>
+
 
         <!-- Вторая страница с дополнительной информацией -->
-            <div class="dresscode-container">
-                <div class="whiteBack">
+                    <div class="decorative-divider">
+                        <span class="divider-icon">🍋</span>
+                    </div>
+                    <h3 class="important-title">Важно:</h4>
                     <div class="dresscode-important">
-                        <h4 class="important-title">Важно:</h4>
+
                         <p class="important-text">
                             Не бойтесь играть с фактурами и деталями — чем больше в вашем образе будет
                             итальянского шика и летнего настроения, тем лучше!
@@ -260,7 +247,7 @@
                 </div>
             </div>
             <div class="dresscode-container">
-                <div class="dresscode-main">
+                <div class="whiteBack">
                     <div class="dresscode-closing">
                         <p class="closing-text">
                             Мы создаем атмосферу легкости, где даже наряд должен «дышать»
@@ -877,9 +864,10 @@
         </div>
     </section>
 
-    <section class="page">
+    <section class="page" id="anketa">
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfVYqriMemzUIMSrukeVRO1Iju8jj3wGAQkR-t9sQ_osd18Bw/viewform?embedded=true" width="100%" height="1755" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>  
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfVYqriMemzUIMSrukeVRO1Iju8jj3wGAQkR-t9sQ_osd18Bw/viewform?embedded=true" width="100%" height="1755" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>  
+
     </section>
 
         <!-- Таймер -->
