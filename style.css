@@ -93,6 +93,16 @@ h1 {
       font-size: 6em;
 
 }
+#schedule {
+   position: relative;
+    min-height: 100dvh; /* занимает всю высоту экрана */
+    background-image: url('assets/background/noback3.png');
+    background-size: 100% 100%;   /* растянуть по ширине */
+    background-position: center;  /* центрировать */
+    background-repeat: no-repeat; /* не повторять */
+        background-size: cover;
+
+}
 #dearPage{
    position: relative;
     min-height: 100dvh; /* занимает всю высоту экрана */
@@ -333,10 +343,6 @@ h2 {
   justify-content: center;
   padding: 30px;
 
-  background-image: url('assets/background/noback3.png');
-  background-size: 100% 100%;   /* растянуть по ширине */
-  background-position: center;  /* центрировать */
-  background-repeat: no-repeat; /* не повторять */
 }
 
 .schedule-list {
@@ -391,7 +397,7 @@ h2 {
   text-align: center;
 }
 
-#sound-icon {
+#sound-icon, #sound-icon-end {
   width: 40px;
   height: 40px;
   transition: transform 0.2s;
@@ -565,10 +571,7 @@ h2 {
   padding: 50px 0;
 }
 
-.dresscode-container {
-  max-width: 900px;
 
-}
 
 .dresscode-title {
   font-family: 'Playfair Display', serif;
@@ -773,7 +776,7 @@ h2 {
 .lemon-decoration {
   position: absolute;
   right: 20px;
-  bottom: 15px;
+  bottom: 10px;
   font-size: 2rem;
   opacity: 0.3;
 }
@@ -1033,7 +1036,7 @@ h2 {
   }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 620px) {
   #dear{
     font-size: 4em;
   }
@@ -1074,7 +1077,14 @@ h2 {
   }
 }
 
-
+@media (min-width: 992px) {
+  #titlePhoto{
+    width: auto;
+  }
+  #scrollContent{
+    width: 80%;
+  }
+}
 /*скролл контект */
 
 #scrollContent{
@@ -1115,4 +1125,65 @@ h2 {
 }
 .slideGray{
   background-color: #C7B299;
+}
+/* Стили для блока контактов */
+.contacts-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.contact-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    padding: 20px 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    min-width: 200px;
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+}
+
+.contact-title {
+    color: var(--color-text);
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-family: initial;
+}
+
+.telegram-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #0088cc;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: rgba(0, 136, 204, 0.1);
+}
+
+.telegram-link:hover {
+    background: rgba(0, 136, 204, 0.2);
+    color: #006699;
+}
+
+.telegram-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Стили для футера */
+.wedding-footer {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-size: 0.9rem;
 }

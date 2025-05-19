@@ -1,5 +1,20 @@
+  async function isMobileDevice() {
+      return (typeof window.orientation !== "undefined") || 
+              (navigator.userAgent.indexOf('IEMobile') !== -1) ||
+              (/Android|webOS|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent));
+  }
 document.addEventListener("DOMContentLoaded", async function () {
+
+   if (window.TelegramWebview) {
+        const url = window.location.href;
+        const chromeUrl = `intent://${url.replace(/^https?:\/\//, '')}#Intent;scheme=https;end`;
+        window.location.href = chromeUrl;
+    }
+
+  console.log(await isMobileDevice())
+  
   const soundIcon = document.getElementById('sound-icon');
+  const soundIconEnd = document.getElementById('sound-icon-end');
   const backgroundMusic = document.getElementById('background-music');
   let isMusicPlaying = false;
   
@@ -9,12 +24,14 @@ document.addEventListener("DOMContentLoaded", async function () {
           // Если музыка играет - выключаем
           backgroundMusic.pause();
           soundIcon.src = 'assets/sound-off.svg';
+          soundIconEnd.src = 'assets/sound-off.svg';
           isMusicPlaying = false;
       } else {
           // Если музыка не играет - включаем
           backgroundMusic.play()
               .then(() => {
                   soundIcon.src = 'assets/sound-on.svg';
+                  soundIconEnd.src = 'assets/sound-on.svg';
                   isMusicPlaying = true;
               })
               .catch(error => {
@@ -23,6 +40,29 @@ document.addEventListener("DOMContentLoaded", async function () {
               });
       }
   });
+    // Обработчик клика по иконке
+  soundIconEnd.addEventListener('click', function() {
+     if (isMusicPlaying) {
+          // Если музыка играет - выключаем
+          backgroundMusic.pause();
+          soundIcon.src = 'assets/sound-off.svg';
+          soundIconEnd.src = 'assets/sound-off.svg';
+          isMusicPlaying = false;
+      } else {
+          // Если музыка не играет - включаем
+          backgroundMusic.play()
+              .then(() => {
+                  soundIcon.src = 'assets/sound-on.svg';
+                  soundIconEnd.src = 'assets/sound-on.svg';
+                  isMusicPlaying = true;
+              })
+              .catch(error => {
+                  console.error('Ошибка воспроизведения музыки:', error);
+                  alert('Не удалось воспроизвести музыку. Пожалуйста, разрешите воспроизведение звука на этой странице.');
+              });
+      }
+  });
+
 
   guestId = window.location.search.replace("?","")
   guestId ? console.log(guestId) : document.body.remove()
@@ -109,7 +149,7 @@ document.querySelectorAll('.slider-wrapper').forEach((wrapper) => {
             colorBoxes[colorIndex].classList.add('animate');
         }
     }
-    
+
     function applyColorFromPalette() {
         if (colorBoxes.length > 0) {
             const colorIndex = currentSlide % colorBoxes.length;
