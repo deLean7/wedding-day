@@ -1041,7 +1041,7 @@ h2 {
     font-size: 4em;
   }
   h1{
-    font-size: 3em;
+    font-size: 2.5em;
   }
   .simpleText{
     font-size: 1.2em;
@@ -1051,7 +1051,7 @@ h2 {
     font-size: 2.5em;
   }
 }
-@media (max-width: 320px) {
+@media (max-width: 360px) {
   #dear{
     font-size: 4em;
   }
