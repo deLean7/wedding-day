@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;600&display=swap');
 
+#loading-mask {
+    background-color: #FCF2D8;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
 :root {
   --color-text: #776e48;
   --color-back: #FCF2D8;
@@ -18,7 +28,7 @@
 .whiteBack {
   background-color: white;
   padding: 20px;
-  margin: 30px 10px;
+  margin: 10px 10px;
   border-radius: 15px;
   box-shadow: 0 5px 25px rgba(183, 110, 121, 0.1);
 }
@@ -86,7 +96,7 @@ body {
 h1 {
     font-family: 'Great Vibes', cursive;
     font-weight: 300;
-    font-size: 3.5em;
+    font-size: 4em;
     color: var(--color-text);
 }
 #dear{
@@ -1038,10 +1048,10 @@ h2 {
 
 @media (max-width: 620px) {
   #dear{
-    font-size: 4em;
+    font-size: 3em;
   }
   h1{
-    font-size: 2.3em;
+    font-size: 2.5em;
   }
   .simpleText{
     font-size: 1.2em;

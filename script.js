@@ -1,4 +1,7 @@
-  async function isMobileDevice() {
+window.onload=function() {
+    document.getElementById('loading-mask').style.display='none';
+}
+async function isMobileDevice() {
       return (typeof window.orientation !== "undefined") || 
               (navigator.userAgent.indexOf('IEMobile') !== -1) ||
               (/Android|webOS|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent));
@@ -351,11 +354,24 @@ async function giveGreeting(textGreeting, typeGuest)
   const greeting = document.getElementById("greeting");
   const dear = document.getElementById("dear");
   const dearOur = document.getElementById("dearOur");
+
+  const ourHeartsText = document.getElementById("ourHeartsText");
+  const inviteYouText = document.getElementById("inviteYouText")
+  const musicText = document.getElementById("musicText");
+  const uOrU = document.getElementById("uOrU");
+  const letsG = document.getElementById("letsG");
+  const closeEyesG = document.getElementById("closeEyesG");
+  const vas = document.getElementById("vas");
+  const readyG = document.getElementById("readyG");
+  const forgetG = document.getElementById("forgetG");
+  const heartG = document.getElementById("heartG");
   if(typeGuest == 1)
   {
     dear.innerHTML = "Дорогой";
     dearOur.innerHTML = "Дорогой "+textGreeting
     greeting.innerText = textGreeting;
+
+    uOrU.textContent = "с тобой - с тем"
 
   }
   else  if(typeGuest == 2)
@@ -364,6 +380,18 @@ async function giveGreeting(textGreeting, typeGuest)
     dearOur.innerHTML = "Дорогая " + textGreeting
     greeting.innerText = textGreeting;
 
+    ourHeartsText.textContent = `Наши сердца переполняются радостью, 
+                и нам не терпится разделить с тобой
+                этот особенный день! `
+    inviteYouText.textContent = "Приглашаем тебя на нашу свадьбу!";
+    musicText.textContent = "Перед прочтением просим тебя включить музыку для создания атмосферы";
+    uOrU.textContent = "с тобой — с той";
+    letsG.textContent = "Давай";
+    closeEyesG.textContent = "Закрой";
+    vas.textContent = "тебя";
+    readyG.textContent = "Готовься";
+    forgetG.textContent = "забудь";
+    heartG.textContent = "сердце"
   }
   else  if(typeGuest == 3)
   {
