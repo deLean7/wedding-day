@@ -1,3 +1,6 @@
+window.onload=function() {
+    document.getElementById('loading-mask').style.display='none';
+}
 async function isMobileDevice() {
       return (typeof window.orientation !== "undefined") || 
               (navigator.userAgent.indexOf('IEMobile') !== -1) ||
@@ -188,7 +191,6 @@ document.querySelectorAll('.slider-wrapper').forEach((wrapper) => {
     updateSlider();
 });
 
-    document.getElementById('loading-mask').style.display='none'; // скрыть белый фон
 
 });
 async function givePersonalDear(params) {
