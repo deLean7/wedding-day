@@ -335,6 +335,7 @@ async function givePersonalSite(guestId)
       case 428068: //Алина Максим Меренич 428068
       textGreeting = "Алина, Саша и Максим" //think
       typeGuest = 3
+      break;
       default:
         document.body.remove
         return
@@ -374,7 +375,7 @@ async function giveGreeting(textGreeting, typeGuest)
     uOrU.textContent = "с тобой - с тем"
 
   }
-  else  if(typeGuest == 2)
+  else if(typeGuest == 2)
   {
     dear.innerHTML = "Дорогая";
     dearOur.innerHTML = "Дорогая " + textGreeting
@@ -393,7 +394,7 @@ async function giveGreeting(textGreeting, typeGuest)
     forgetG.textContent = "забудь";
     heartG.textContent = "сердце"
   }
-  else  if(typeGuest == 3)
+  else if(typeGuest == 3)
   {
     dear.innerHTML = "Дорогие";
     dearOur.innerHTML = "Дорогие наши";
