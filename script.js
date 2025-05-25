@@ -302,7 +302,7 @@ async function givePersonalSite(guestId)
 
       break;
       case 204194: //Тамара Вологина 204194
-      textGreeting = "Бабушка Тома" // think
+      textGreeting = "Тамара Викторовна" // think
       typeGuest = 2
 
       break;
@@ -349,6 +349,7 @@ typeGuest:
 1- ОН 1
 2- ОНА 1
 3- Их 2 и более
+4 - ОНА 1 НА ВЫ
 */
 async function giveGreeting(textGreeting, typeGuest)
 {
@@ -372,7 +373,18 @@ async function giveGreeting(textGreeting, typeGuest)
     dearOur.innerHTML = "Дорогой "+textGreeting
     greeting.innerText = textGreeting;
 
+    ourHeartsText.textContent = `Наши сердца переполняются радостью, 
+                и нам не терпится разделить с тобой
+                этот особенный день! `
+    inviteYouText.textContent = "Приглашаем тебя на нашу свадьбу!";
+    musicText.textContent = "Перед прочтением просим тебя включить музыку для создания атмосферы";
     uOrU.textContent = "с тобой - с тем"
+    letsG.textContent = "Давай";
+    closeEyesG.textContent = "Закрой";
+    vas.textContent = "тебя";
+    readyG.textContent = "Готовься";
+    forgetG.textContent = "забудь";
+    heartG.textContent = "сердце"
 
   }
   else if(typeGuest == 2)
@@ -399,6 +411,26 @@ async function giveGreeting(textGreeting, typeGuest)
     dear.innerHTML = "Дорогие";
     dearOur.innerHTML = "Дорогие наши";
     greeting.innerText = textGreeting;
+
+  }
+  else if(typeGuest == 4)
+  {
+    dear.innerHTML = "Дорогая";
+    dearOur.innerHTML = "Дорогая " + textGreeting
+    greeting.innerText = textGreeting;
+
+    ourHeartsText.textContent = `Наши сердца переполняются радостью, 
+                и нам не терпится разделить с Вами
+                этот особенный день! `
+    inviteYouText.textContent = "Приглашаем Вас на нашу свадьбу!";
+    musicText.textContent = "Перед прочтением просим Вас включить музыку для создания атмосферы";
+    uOrU.textContent = "с Вами — с той";
+    letsG.textContent = "Давайте";
+    closeEyesG.textContent = "Закройте";
+    vas.textContent = "Вас";
+    readyG.textContent = "Готовьтесь";
+    forgetG.textContent = "забудьте";
+    heartG.textContent = "сердце"
 
   }
 
