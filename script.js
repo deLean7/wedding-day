@@ -303,7 +303,7 @@ async function givePersonalSite(guestId)
       break;
       case 204194: //Тамара Вологина 204194
       textGreeting = "Тамара Викторовна" // think
-      typeGuest = 2
+      typeGuest = 4
 
       break;
       case 873819: //Олег Вологин 873819
@@ -318,7 +318,7 @@ async function givePersonalSite(guestId)
       break;
       case 301298: //Маргарита Царева 301298
       textGreeting = "Маргарита Александровна" //think
-      typeGuest = 2
+      typeGuest = 4
       break;
       case 512744: //Мама и Паша 512744
       textGreeting = "Мама и Паша" //think
