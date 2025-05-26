@@ -287,7 +287,7 @@ async function givePersonalSite(guestId)
       break;  
 
       case 905420: //Теть Лена и Араз 905420
-      textGreeting = "Елена и Араз"
+      textGreeting = "Елена, Араз и Бабушка Валя"
       typeGuest = 3
 
       break;
