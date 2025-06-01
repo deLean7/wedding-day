@@ -336,9 +336,10 @@ async function givePersonalSite(guestId)
       textGreeting = "Алина, Саша и Максим" //think
       typeGuest = 3
       break;
-      case 260822: //Алина Максим Меренич 428068
+      case 260822: //Леонид и Валерия 428068
       textGreeting = "Леонид и Валерия" //think
       typeGuest = 3
+      await deleteZAGS();
       break;
       default:
         document.body.remove
@@ -355,6 +356,17 @@ typeGuest:
 3- Их 2 и более
 4 - ОНА 1 НА ВЫ
 */
+
+async function deleteZAGS() {
+      // Находим все элементы с классом, содержащим "ZAGS"
+    const elements = document.querySelectorAll('[class*="ZAGS"]');
+    
+    // Удаляем первые 2 найденных элемента
+    for (let i = 0; i < 2 && i < elements.length; i++) {
+        elements[i].remove();
+    }
+
+}
 async function giveGreeting(textGreeting, typeGuest)
 {
   const greeting = document.getElementById("greeting");
