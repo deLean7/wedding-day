@@ -336,6 +336,10 @@ async function givePersonalSite(guestId)
       textGreeting = "Алина, Саша и Максим" //think
       typeGuest = 3
       break;
+      case 260822: //Алина Максим Меренич 428068
+      textGreeting = "Леонид и Валерия" //think
+      typeGuest = 3
+      break;
       default:
         document.body.remove
         return
